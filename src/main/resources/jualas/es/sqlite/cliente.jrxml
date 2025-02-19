@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Clientes" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="38eeeb85-f4bf-4936-9c7b-a3e8135bf1f3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Chinook"/>
+	<queryString>
+		<![CDATA[SELECT CustomerId, FirstName, LastName, Company, Address, City FROM Customers]]>
+	</queryString>
+	<field name="CustomerId" class="java.lang.Integer"/>
+	<field name="FirstName" class="java.lang.String"/>
+	<field name="LastName" class="java.lang.String"/>
+	<field name="Company" class="java.lang.String"/>
+	<field name="Address" class="java.lang.String"/>
+	<field name="City" class="java.lang.String"/>
+	<variable name="CustomerCount" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{CustomerId}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="8" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="21" width="200" height="30" uuid="c4d3534b-d413-4844-90e0-e21595f60541"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jualas.es]]></text>
+			</staticText>
+			<image>
+				<reportElement x="360" y="0" width="100" height="50" uuid="10791dad-70da-4c2b-92df-72dccf6797de"/>
+				<imageExpression><![CDATA["src/main/resources/asset/logo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="140" y="21" width="190" height="30" uuid="c31007ae-07c7-4346-916b-354e79f21571"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Desarrollo de Software"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="fc654f53-7c42-4838-ab4c-812eeae35996"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="4d2f3e2a-9a96-460c-9483-56971f6d60ef"/>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="7e28eb55-8206-4a7a-bc53-30ebe92020c9"/>
+				<text><![CDATA[Compañía]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="20" uuid="4cbf5c21-adc2-4d94-98f8-28d90e68b987"/>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="100" height="20" uuid="7fb45194-8927-43da-901a-f820845327ea"/>
+				<text><![CDATA[Ciudad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="-37" width="100" height="20" uuid="7cb5d719-e90f-492d-b585-bcddeb94477b"/>
+				<textFieldExpression><![CDATA[$F{FirstName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="-37" width="100" height="20" uuid="c786a130-63c0-4036-b531-b8874a01a67e"/>
+				<textFieldExpression><![CDATA[$F{LastName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="-37" width="100" height="20" uuid="6afb7e03-7c95-4c97-93d4-4801a99bc202"/>
+				<textFieldExpression><![CDATA[$F{Company}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="-37" width="100" height="20" uuid="21facea4-90d7-45b0-a89b-ab9a4eace071"/>
+				<textFieldExpression><![CDATA[$F{Address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="-37" width="100" height="20" uuid="55f58cac-7b8b-4b42-9295-631c576423a7"/>
+				<textFieldExpression><![CDATA[$F{City}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="200" height="20" uuid="b566991a-86e2-43fc-90a4-a896baa0ea89"/>
+				<textFieldExpression><![CDATA["Total de Clientes: " + $V{CustomerCount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
