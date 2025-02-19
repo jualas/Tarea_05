@@ -1,5 +1,5 @@
 # Tarea_05
-Tarea 05  Desarrollo de Interfaces 
+Tarea 05  Diseño de Interfaces 
 
 ## Características
 
