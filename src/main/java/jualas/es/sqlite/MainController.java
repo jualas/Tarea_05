@@ -93,6 +93,10 @@ public class MainController {
             stage.setTitle("Informe de Artistas");
             stage.setScene(scene);
 
+            // Cargar el logo.png
+            javafx.scene.image.Image logo = new javafx.scene.image.Image(getClass().getResourceAsStream("/asset/logo.png"));
+            stage.getIcons() .add(logo);
+
             // Mostrar la nueva ventana con la limitacion de que no se pueda redimensionar
             stage.setResizable(false);
             stage.show();
